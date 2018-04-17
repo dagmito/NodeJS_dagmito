@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dagmito/Ex_Roldaninhas#readme",
   "dependencies": {
+    "ejs": "^2.5.8",
     "express": "^4.16.3"
   }
 }
