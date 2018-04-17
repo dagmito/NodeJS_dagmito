@@ -1,18 +1,16 @@
 var http = require('http');
+var app = require('express')();
 
-var express = require('express');
+app.set('view engine', 'ejs');
 
-var server = http.createServer(function (request, response) {
-    if (request.url === "/editar") {
-        response.end(
-            '<html><head charset="utf-8"></head><body><h1>Welcome to Bilola Master - Editar</h1></body></html>'
-        );
-    } else {
-        response.end(
-            '<html><head charset="utf-8" ></head><body><h1>Welcome to Bilola Master</h1></body></html>'
-        );
-    }
+app.get('/', function(request, response){
+    response.render("index");
 });
 
-server.listen(3000);
-console.log('Servidor no ar');
+app.get('/editar', function(request, response){
+    response.render("index_editar");
+});
+
+app.listen(3000, function(){
+    console.log('Bilola tá durona!!');
+});
